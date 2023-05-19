@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+
+
+let date = new Date(2023, 5, 24, 20);  //2023, 5, 24, 17
+let currTime =  date.getHours();
+let greeting = "";
+let cssStyle = {};
+
+
+if(currTime>=1 && currTime<12){
+  greeting="Good Morning";
+  cssStyle.color = "green";
+}
+else if(currTime>=12 && currTime<18){
+  greeting="Good Afternoon";
+  cssStyle.color = "Blue";
+}
+else if(currTime>=18 && currTime<20){
+  greeting = "Good Evening";
+  cssStyle.color = "Orange";
+}
+else{
+  greeting = "Good Night";
+  cssStyle.color = "Black"
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1 className='greet'>Hello Sir, <span style = {cssStyle}>{greeting}</span></h1>
     </div>
   );
 }
