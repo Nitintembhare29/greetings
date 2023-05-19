@@ -1,7 +1,7 @@
 import './App.css';
 
 
-let date = new Date(2023, 5, 24, 20);  //2023, 5, 24, 17
+let date = new Date();  //2023, 5, 24, 17
 let currTime =  date.getHours();
 let greeting = "";
 let cssStyle = {};
